@@ -1,15 +1,19 @@
 package dev.zotta.thankful_messages.domain.message;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Table(name = "message")
 @Entity(name = "Message")
 @Getter
+@NoArgsConstructor
 public class Message {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,17 +21,24 @@ public class Message {
 
   private String message;
   private String author;
-  private String createdAt;
+  private LocalDateTime createdAt;
   private int popularity = 0;
 
   public Message(MessageCreateDto messageCreateDto) {
     this.message = messageCreateDto.message();
     this.author = messageCreateDto.author();
-    this.createdAt = java.time.LocalDateTime.now().toString();
+    this.createdAt = java.time.LocalDateTime.now();
   }
-  
-  public void setPopularity(int popularity) {
-    this.popularity = popularity + 1;
+
+  public void upVote(Message message) {
+    this.popularity = message.getPopularity() + 1;
+  }
+
+  public void downVote(Message message) {
+    if (message.getPopularity() == 0) {
+      return;
+    }
+    this.popularity = message.getPopularity() - 1;
   }
 
 }
