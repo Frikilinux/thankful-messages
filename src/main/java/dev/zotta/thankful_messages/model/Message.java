@@ -2,12 +2,15 @@ package dev.zotta.thankful_messages.model;
 
 import java.time.LocalDateTime;
 
+import org.springframework.data.annotation.CreatedDate;
+
 import dev.zotta.thankful_messages.dto.MessageCreateDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -20,9 +23,15 @@ public class Message {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
+  @Size(max = 250)
   private String message;
+
+  @Size(max = 50)
   private String author;
+
+  @CreatedDate
   private LocalDateTime createdAt;
+
   private int popularity = 0;
 
   public Message(MessageCreateDto messageCreateDto) {

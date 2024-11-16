@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -72,6 +73,13 @@ public class MessagesController {
   public ResponseEntity<MessageResponseDto> downVoteMessage(@PathVariable Long id) {
     Message message = messageService.downVoteMessage(id);
     return ResponseEntity.ok(new MessageResponseDto(message));
+  }
+
+  @Operation(summary = "Elimina un mensaje")
+  @DeleteMapping("/{id}")
+  public ResponseEntity<String> deleteMessage(@PathVariable Long id) {
+    messageService.deleteMessage(id);
+    return ResponseEntity.ok("Mensaje borrado");
   }
 
 }

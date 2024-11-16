@@ -50,4 +50,12 @@ public class MessageService {
 
     return message;
   }
+
+  public void deleteMessage(Long id) {
+    Optional<Message> message = messageRepository.findById(id);
+    if (message.isEmpty()) {
+      throw new EntityNotFoundException("Mensaje no encontrado");
+    }
+    messageRepository.deleteById(id);
+  }
 }
