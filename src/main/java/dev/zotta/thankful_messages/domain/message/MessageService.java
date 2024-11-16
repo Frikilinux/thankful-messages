@@ -7,6 +7,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class MessageService {
 
@@ -22,7 +24,7 @@ public class MessageService {
 
   public Message getMessageById(Long id) {
     Optional<Message> message = messageRepository.findById(id);
-    return message.orElseThrow();
+    return message.orElseThrow(() -> new EntityNotFoundException("Mensaje no encontrado"));
   }
 
   public Page<Message> getMessages(Pageable pageable) {
