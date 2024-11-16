@@ -1,4 +1,4 @@
-package dev.zotta.thankful_messages.domain.message;
+package dev.zotta.thankful_messages.service;
 
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +7,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import dev.zotta.thankful_messages.dto.MessageCreateDto;
+import dev.zotta.thankful_messages.model.Message;
+import dev.zotta.thankful_messages.repository.MessageRepository;
 import jakarta.persistence.EntityNotFoundException;
 
 @Service

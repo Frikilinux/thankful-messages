@@ -18,13 +18,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import dev.zotta.thankful_messages.domain.message.Message;
-import dev.zotta.thankful_messages.domain.message.MessageCreateDto;
-import dev.zotta.thankful_messages.domain.message.MessageResponseDto;
-import dev.zotta.thankful_messages.domain.message.MessageService;
+import dev.zotta.thankful_messages.dto.MessageCreateDto;
+import dev.zotta.thankful_messages.dto.MessageResponseDto;
+import dev.zotta.thankful_messages.model.Message;
+import dev.zotta.thankful_messages.service.MessageService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
+@Tag(name = "Messages", description = "API de mensajes de agradecimiento")
 @CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("/messages")

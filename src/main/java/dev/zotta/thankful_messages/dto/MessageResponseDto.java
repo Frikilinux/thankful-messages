@@ -1,7 +1,9 @@
-package dev.zotta.thankful_messages.domain.message;
+package dev.zotta.thankful_messages.dto;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+
+import dev.zotta.thankful_messages.model.Message;
 
 public record MessageResponseDto(
     Long id,

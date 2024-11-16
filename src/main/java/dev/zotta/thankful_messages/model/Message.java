@@ -1,7 +1,8 @@
-package dev.zotta.thankful_messages.domain.message;
+package dev.zotta.thankful_messages.model;
 
 import java.time.LocalDateTime;
 
+import dev.zotta.thankful_messages.dto.MessageCreateDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
