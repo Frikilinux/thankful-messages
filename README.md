@@ -103,7 +103,7 @@ Disponible en Swagger `/swagger-ui/index.html`
     "paged": true,
     "unpaged": false
   },
-  "totalElements": 1,
+  "totalElements": 3,
   "totalPages": 1,
   "last": true,
   "size": 20,
@@ -113,7 +113,7 @@ Disponible en Swagger `/swagger-ui/index.html`
     "sorted": true,
     "unsorted": false
   },
-  "numberOfElements": 1,
+  "numberOfElements": 3,
   "first": true,
   "empty": false
 }
