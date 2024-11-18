@@ -1,6 +1,13 @@
 # Mensajes de gratitud API
 
-Documentación disponible e Swagger `/swagger-ui/index.html`
+La API de mensajes de gratitud permite a los usuarios crear, listar y votar mensajes de gratitud. Los mensajes de gratitud son una forma de expresar agradecimiento y positividad dentro de una comunidad como la **AlumniONE**.
+
+
+![API image](https://ik.imagekit.io/zotta/github/180shots_so.webp?updatedAt=1731890178031)
+
+## Documentación y testeo
+
+Disponible en Swagger `/swagger-ui/index.html`
 
 ## Uso de la api
 
@@ -30,6 +37,24 @@ Documentación disponible e Swagger `/swagger-ui/index.html`
   "author": "Gustavo Ceratti",
   "createdAt": "2024-11-17T11:59:01",
   "popularity": 0
+}
+```
+
+### Obtener un mensaje por ID
+
+**`GET`** `/messages/{id}`
+
+#### Response
+
+##### **_`200 OK`_**
+
+```JSON5
+{
+  "id": 1,
+  "message": "Gracias totales.",
+  "author": "Gustavo Ceratti",
+  "createdAt": "2024-11-17T11:59:01",
+  "popularity": 1
 }
 ```
 
@@ -179,3 +204,11 @@ La api estará disponible en el puerto especificado en el archivo `.env`
 
 > [!IMPORTANT]
 > Abre el puerto de la api desde la plataforma OCI y en el OS de la instancia.
+
+---
+
+## Demo
+
+Puede encontrarce una demo de esta api sólo para propósitos educativos en: 
+
+**`https://thankful.zotta.dev/`**
