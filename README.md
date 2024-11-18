@@ -140,7 +140,7 @@ Disponible en Swagger `/swagger-ui/index.html`
 
 #### Odenar mensajes paginados de a 30 y ordenados por autor de forma ascendente
 
-**`GET`** `/messages?sort=autor,ASC&size=30`
+**`GET`** `/messages?sort=author,ASC&size=30`
 
 ### Votar un mensaje
 
