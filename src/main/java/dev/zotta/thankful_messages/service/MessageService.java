@@ -20,6 +20,12 @@ public class MessageService {
 
   @Transactional
   public Message createMessage(MessageCreateDto messageCreateDto) {
+
+    Optional<Message> duplicateMessage = messageRepository.checkDuplicate(messageCreateDto.message());
+    if (duplicateMessage.isPresent()) {
+      throw new IllegalArgumentException("El mensaje ya existe");
+    }
+
     Message message = new Message(messageCreateDto);
     messageRepository.save(message);
     return message;
