@@ -1,4 +1,4 @@
-package dev.zotta.thankful_messages.contoller;
+package dev.zotta.thankful_messages.controller;
 
 import java.net.URI;
 
